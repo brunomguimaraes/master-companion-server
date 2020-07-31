@@ -1,0 +1,13 @@
+{
+  "name": "master-companion-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:brunomguimaraes/master-companion-server.git",
+  "author": "Bruno <mguimaraesbruno@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^2.16.1",
+    "graphql": "^15.3.0",
+    "typescript": "^3.9.7"
+  }
+}
