@@ -7,7 +7,10 @@
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^2.16.1",
+    "cors": "^2.8.5",
     "graphql": "^15.3.0",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.56",
     "typescript": "^3.9.7"
   }
 }
