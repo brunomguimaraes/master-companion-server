@@ -1,15 +1,22 @@
 {
   "name": "master-companion-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts",
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
+  },
   "repository": "git@github.com:brunomguimaraes/master-companion-server.git",
   "author": "Bruno <mguimaraesbruno@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^2.16.1",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "graphql": "^15.3.0",
+    "knex": "^0.21.2",
     "ts-node": "^8.10.2",
+    "sqlite3": "^4.2.0",
     "ts-node-dev": "^1.0.0-pre.56",
     "typescript": "^3.9.7"
   }
