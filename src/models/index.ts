@@ -1,3 +1,3 @@
-import { TodoListItem, InputTodoListItem } from './todo-list';
+import { User, InputUser } from './user';
 
-export { TodoListItem, InputTodoListItem };
+export { User, InputUser };

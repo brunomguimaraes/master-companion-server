@@ -4,13 +4,11 @@ type ResponseUser {
   data: [User]
 }
 
-type Role = 'master' | 'player' | 'spectator';
-
 type User {
   id: ID!
   name: String!
   nickname: String
-  role: Role!
+  role: String!
   createdAt: Date!
   updatedAt: Date!
 }
@@ -18,7 +16,7 @@ type User {
 input InputUser {
   name: String!
   nickname: String
-  role: Role!
+  role: String!
 }
 
 type Query {
