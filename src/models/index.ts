@@ -1,3 +1,7 @@
-import { User, InputUser } from './user';
+import User from './User';
+import Character from './Character';
 
-export { User, InputUser };
+export {
+    User,
+    Character
+}

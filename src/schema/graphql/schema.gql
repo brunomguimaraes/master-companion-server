@@ -1,0 +1,57 @@
+enum CharacterType {
+    PC,
+    NPC
+}
+
+type User {
+    id: Int!
+    full_name: String
+    created_at: String
+    characters: [Character]
+}
+
+type Character {
+    id: Int!
+    name: String
+    creator_id: Int!
+    character_type: CharacterType
+    created_at: String
+    creator: User
+
+}
+
+input createUserInput {
+    full_name: String!
+}
+
+input updateUserInput {
+    id:Int!
+    full_name: String
+}
+
+input createCharacterInput {
+    name: String!
+    creator_id: Int!
+    character_type: CharacterType!
+}
+
+input updateCharacterInput {
+    id:Int!
+    name: String!
+}
+
+type Query{
+    user(id: Int!): User
+    users: [User]
+    character(id: Int!): Character
+    characters: [Character]
+}
+
+type Mutation{
+    createUser(user: createUserInput!):User
+    updateUser(user: updateUserInput!):User
+    deleteUser(id: Int!):String
+    createCharacter(character: createCharacterInput!): Character
+    deleteCharacter(id: Int!): String
+    updateCharacter(character: updateCharacterInput!): Character
+}
