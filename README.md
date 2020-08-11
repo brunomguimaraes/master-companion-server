@@ -1,5 +1,7 @@
 # master-companion-server
 
+<img align="center" src="https://pm1.narvii.com/7391/6582a3fbde307f314a040280a411b29bd6470a2cr4-750-375_00.jpg"/> 
+
 ## Requirements
 - NodeJS v12.16.3
 - Docker v2.3.0.4
