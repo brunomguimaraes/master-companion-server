@@ -15,11 +15,11 @@
 
 ##### my defaults(create your own!):
 ```
-POSTGRES_USER=docker
-POSTGRES_PASSWORD=docker
+POSTGRES_USER=master
+POSTGRES_PASSWORD=M@ST3RRComp41n10n
 POSTGRES_HOST=127.0.0.1
-POSTGRES_DB=database
-POSTGRES_PORT=54320
+POSTGRES_DB=master_companion_db
+POSTGRES_PORT=54330
 ```
 ### Create docker container
 `docker-compose up -d`
