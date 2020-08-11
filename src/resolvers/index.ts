@@ -1,8 +1,8 @@
-import user from './user';
-import character from './character';
+import user from './user'
+import character from './character'
 
 
 export {
-    user,
-    character
+  user,
+  character
 }
