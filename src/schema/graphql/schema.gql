@@ -3,9 +3,18 @@ enum CharacterType {
     NPC
 }
 
+enum SheetType {
+    PATHFINDER,
+    DND5ED,
+    DND4ED,
+    GURPS,
+    NPC
+}
+
 type User {
     id: Int!
     full_name: String
+    email: String!
     created_at: String
     characters: [Character]
 }
@@ -17,22 +26,57 @@ type Character {
     character_type: CharacterType
     created_at: String
     creator: User
+    sheet: Sheet
+}
 
+type Sheet {
+    id: Int!
+    character_id: Int!
+    sheet_type: SheetType
+    dnd5ed_sheet: DND5EDSheet
+}
+
+type DND5EDSheet {
+    class: String
+    race: String
+    level: String
+    background: String
+    alignment: String
+    experience_points: Int
+    stats: DND5EDStats
+    features_and_traits: [DND5EDFeaturesAndTraits]
+}
+
+type DND5EDStats {
+    strength: Int!
+    dexterity: Int!
+    constitution: Int!
+    inteligence: Int!
+    wisdom: Int!
+    charisma: Int!
+}
+
+type DND5EDFeaturesAndTraits {
+    title: String
+    description: String
 }
 
 input createUserInput {
     full_name: String!
+    email: String!
 }
 
 input updateUserInput {
     id:Int!
     full_name: String
+    email: String
 }
 
 input createCharacterInput {
     name: String!
     creator_id: Int!
     character_type: CharacterType!
+    sheet: Sheet
 }
 
 input updateCharacterInput {
