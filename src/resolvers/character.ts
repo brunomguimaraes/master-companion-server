@@ -32,7 +32,7 @@ const resolvers : Resolvers = {
         character  = await Character.query().insert({...args.character})
                
       } catch (error) {
-        throw new UserInputError('Bad user input fields required',{
+        throw new UserInputError('Bad user input. Fields required:',{
           invalidArgs: Object.keys(args),
         })
                 

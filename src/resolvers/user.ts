@@ -35,7 +35,7 @@ const resolvers : Resolvers ={
         user = await User.query().insert({...args.user})
       } catch (error) {
         console.log(error)
-        throw new UserInputError('Error creating user', {
+        throw new UserInputError('Error creating user. Fields required:', {
           invalidArgs: Object.keys(args),
         })
       }

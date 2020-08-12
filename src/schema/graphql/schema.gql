@@ -14,7 +14,7 @@ enum SheetType {
 type User {
     id: Int!
     full_name: String
-    email: String!
+    email: String
     created_at: String
     characters: [Character]
 }
@@ -37,7 +37,7 @@ type Sheet {
 }
 
 type DND5EDSheet {
-    class: String
+    classes: [DND5EDClasses]
     race: String
     level: String
     background: String
@@ -48,17 +48,22 @@ type DND5EDSheet {
 }
 
 type DND5EDStats {
-    strength: Int!
-    dexterity: Int!
-    constitution: Int!
-    inteligence: Int!
-    wisdom: Int!
-    charisma: Int!
+    strength: Int
+    dexterity: Int
+    constitution: Int
+    inteligence: Int
+    wisdom: Int
+    charisma: Int
 }
 
 type DND5EDFeaturesAndTraits {
     title: String
     description: String
+}
+
+type DND5EDClasses {
+    class_name: String
+    level: Int
 }
 
 input createUserInput {
@@ -76,7 +81,12 @@ input createCharacterInput {
     name: String!
     creator_id: Int!
     character_type: CharacterType!
-    sheet: Sheet
+    sheet: createSheetInput
+}
+
+input createSheetInput {
+    sheet_type: SheetType!
+    character_id: Int!
 }
 
 input updateCharacterInput {

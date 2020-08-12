@@ -2,6 +2,7 @@ import { Model } from 'objection'
 import { CharacterType, Maybe } from '../__generated__/generated-types'
 
 import User from './User'
+// import Sheet from './Sheet'
 
 class Character extends Model {
     static tableName = 'characters';
@@ -11,6 +12,7 @@ class Character extends Model {
     created_at?: string;
     creator_id!: number;
     creator?: User;
+    // sheet?: Sheet;
 
     static jsonSchema = {
       type: 'object',
@@ -25,7 +27,7 @@ class Character extends Model {
     };
 
     static relationMappings = () => ({
-      owner: {
+      creator: {
         relation: Model.BelongsToOneRelation,
         modelClass: User,
         join: {

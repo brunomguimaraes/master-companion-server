@@ -1,25 +1,22 @@
 import { Model } from 'objection'
-import { Maybe } from '../__generated__/generated-types'
+import { Maybe, SheetType } from '../__generated__/generated-types'
 import Character from './Character'
 
 
 
-class User extends Model {
-    static tableName = 'users';
+class Sheet extends Model{
+    static tableName = 'sheets';
     id! : number;
-    full_name!: Maybe<string>;
-    email!: Maybe<string>;
-    created_at?:string;
-    characters?: Character[];
+    character_id!: number;
+    sheet_type?: Maybe<SheetType>;
 
     static jsonSchema = {
       type:'object',
-      required:['full_name', 'email'],
+      required:['full_name',],
 
       properties:{
         id: { type:'integer'},
         full_name:{type :'string', min:1, max :255},
-        email:{type :'string', min:1, max :255},
         created_at:{type :'string', min:1, max :255}
       }
     }
@@ -36,4 +33,4 @@ class User extends Model {
     })
 }
 
-export default User
+export default Sheet
