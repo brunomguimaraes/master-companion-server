@@ -19,7 +19,7 @@ const resolvers : Resolvers = {
     }
   },
   Character: {
-    creator: async(parent,args,ctx)=>{
+    creator: async(parent,args,ctx) => {
       const creator : User = await Character.relatedQuery('creator').for(parent.id).first()
 
       return creator

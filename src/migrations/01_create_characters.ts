@@ -6,7 +6,7 @@ export async function up(knex: Knex): Promise<any> {
     table.increments('id')
     table.string('name')
     table.integer('creator_id').references('users.id').onDelete('CASCADE')
-    table.string('specie')
+    table.string('character_type')
     table.timestamps(true, true)
   })
 }

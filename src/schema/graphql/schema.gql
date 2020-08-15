@@ -20,11 +20,11 @@ type User {
 }
 
 type Character {
+    created_at: String
     id: Int!
     name: String
-    creator_id: Int!
     character_type: CharacterType
-    created_at: String
+    creator_id: Int!
     creator: User
     sheet: Sheet
 }
@@ -34,17 +34,21 @@ type Sheet {
     character_id: Int!
     sheet_type: SheetType
     dnd5ed_sheet: DND5EDSheet
+    created_at: String
 }
 
 type DND5EDSheet {
-    classes: [DND5EDClasses]
+    id: Int!
+    sheet_id: Int!
     race: String
     level: String
     background: String
     alignment: String
     experience_points: Int
+    classes: [DND5EDClasses]
     stats: DND5EDStats
     features_and_traits: [DND5EDFeaturesAndTraits]
+    hitpoints: HitPoints
 }
 
 type DND5EDStats {
@@ -66,6 +70,18 @@ type DND5EDClasses {
     level: Int
 }
 
+type DND5EDPersonality {
+    personality_trais: String
+    ideals: String
+    bonds: String
+    flaws: String
+}
+
+type HitPoints {
+    current_hitpoints: Int
+    max_hitpoints: Int
+}
+
 input createUserInput {
     full_name: String!
     email: String!
@@ -81,7 +97,6 @@ input createCharacterInput {
     name: String!
     creator_id: Int!
     character_type: CharacterType!
-    sheet: createSheetInput
 }
 
 input createSheetInput {

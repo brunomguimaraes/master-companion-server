@@ -22,12 +22,12 @@ class Sheet extends Model{
     }
 
     static relationMappings = () => ({
-      characters: {
-        relation: Model.HasManyRelation,
+      character: {
+        relation: Model.BelongsToOneRelation,
         modelClass: Character,
         join: {
-          from: 'users.id',
-          to: 'character.creator_id'
+          from: 'sheet.character_id',
+          to: 'character.id'
         }
       }
     })
