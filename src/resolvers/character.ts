@@ -15,7 +15,6 @@ const resolvers : Resolvers = {
       const characters: Character[] = await Character.query()
 
       return characters
-
     }
   },
   Character: {

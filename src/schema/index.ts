@@ -1,7 +1,7 @@
 import { makeExecutableSchema } from 'graphql-tools'
 import schema from './graphql/schema.gql'
-import { user, character } from '../resolvers'
+import { user, character, sheet } from '../resolvers'
 
-const resolvers = [user, character]
+const resolvers = [user, character, sheet]
 
 export default makeExecutableSchema({typeDefs:schema, resolvers: resolvers as any})

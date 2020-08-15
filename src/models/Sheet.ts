@@ -9,6 +9,7 @@ class Sheet extends Model{
     id! : number;
     character_id!: number;
     sheet_type?: Maybe<SheetType>;
+    created_at?: string;
 
     static jsonSchema = {
       type:'object',
@@ -16,8 +17,8 @@ class Sheet extends Model{
 
       properties:{
         id: { type:'integer'},
-        full_name:{type :'string', min:1, max :255},
-        created_at:{type :'string', min:1, max :255}
+        created_at:{type :'string', min:1, max :255},
+        sheet_type:{type :'string', min:1, max :255}
       }
     }
 

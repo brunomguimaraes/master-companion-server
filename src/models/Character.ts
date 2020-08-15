@@ -21,7 +21,7 @@ class Character extends Model {
       properties: {
         id: { type: 'integer' },
         name: { type: 'string', min: 1, max: 255 },
-        type: { type: 'string', min: 1, max: 255 },
+        character_type: { type: 'string', min: 1, max: 255 },
         created_at: { type: 'string', min: 1, max: 255 }
       }
     };

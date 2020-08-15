@@ -99,14 +99,18 @@ input createCharacterInput {
     character_type: CharacterType!
 }
 
+input updateCharacterInput {
+    id:Int!
+    name: String!
+}
 input createSheetInput {
     sheet_type: SheetType!
     character_id: Int!
 }
 
-input updateCharacterInput {
+input updateSheetInput {
     id:Int!
-    name: String!
+    sheet_type: SheetType
 }
 
 type Query{
@@ -114,6 +118,8 @@ type Query{
     users: [User]
     character(id: Int!): Character
     characters: [Character]
+    sheet(id: Int!): Sheet
+    sheets: [Sheet]
 }
 
 type Mutation{
@@ -121,6 +127,9 @@ type Mutation{
     updateUser(user: updateUserInput!):User
     deleteUser(id: Int!):String
     createCharacter(character: createCharacterInput!): Character
-    deleteCharacter(id: Int!): String
     updateCharacter(character: updateCharacterInput!): Character
+    deleteCharacter(id: Int!): String
+    createSheet(sheet: createSheetInput!): Sheet
+    updateSheet(sheet: updateSheetInput!): Sheet
+    deleteSheet(id: Int!): String
 }
